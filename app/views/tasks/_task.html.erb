@@ -1,1 +1,1 @@
-<p>Task: <%= task.description %>, Complete By: <%= task.completion_date %></p>
+<p>Task: <%= task.description %>, Complete By: <%= task.completion_date %> <%= link_to 'View Task', "/tasks/#{task.id}" %></p>
