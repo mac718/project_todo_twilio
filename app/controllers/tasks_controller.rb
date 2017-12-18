@@ -18,8 +18,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
+      flash[:success] = "You've successfully created your task!"
       redirect_to tasks_path(@task.id)
     else
+      flash[:error] = "Uh Oh! Something went wrong!"
       render :new
     end
   end
@@ -27,8 +29,10 @@ class TasksController < ApplicationController
   def update 
     @task = Task.find(params[:id])
     if @task.update(task_params)
+      flash[:success] = "You've successfully updated your task!"
       redirect_to tasks_path(@task.id)
     else
+      flash[:error] = "Uh Oh! Something went wrong!"
       render :update
     end
   end
@@ -36,7 +40,11 @@ class TasksController < ApplicationController
   def destroy 
     @task = Task.find(params[:id])
     if @task.destroy
+      flash[:success] = "You've successfully deleted your task!"
       redirect_to tasks_path
+    else
+      flash[:error] = "Uh Oh! Something went wrong!"
+      render task_path(params[:id])
     end
   end
 
