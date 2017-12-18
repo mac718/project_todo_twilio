@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks
+  root to: "tasks#index"
 =begin
   get "/tasks" => "tasks#index"
   get "/tasks/new" => "tasks#new"
