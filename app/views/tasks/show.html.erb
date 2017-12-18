@@ -3,3 +3,5 @@
 <br>
 <h2>Complete By</h2>
 <p><%= @task.completion_date %></p>
+<%= link_to 'Edit Task',  edit_task_path(@task.id) %>
+<%= link_to 'Delete Task', task_path(@task.id), data: {:confirm => 'Are you sure?'}, method: 'delete' %>
