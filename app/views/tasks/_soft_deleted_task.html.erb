@@ -1,0 +1,4 @@
+<p><del>Task: <%= task.description %>, Complete By: <%= task.completion_date %> </del>
+  <%= link_to 'Delete Task', task_path(task.id), data: {:confirm => 'Are you sure?'}, method: 'delete' %>
+  <%= link_to 'Uncross Task', task_path(task.id), method: 'post' %>
+</p>

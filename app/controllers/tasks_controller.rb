@@ -48,6 +48,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def soft_delete
+    @task = Task.find(params[:id])
+    @task.soft_deleted == true ? @task.soft_deleted = false : @task.soft_deleted = true
+    @task.save
+    redirect_to tasks_path
+  end
+
   private
 
   def task_params

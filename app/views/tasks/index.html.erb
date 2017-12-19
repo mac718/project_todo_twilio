@@ -1,4 +1,8 @@
 <h1>Tasks</h1>
 <% @tasks.each do |task| %>
-  <%= render task %>
+  <% if task.soft_deleted %>
+    <%= render :partial => 'soft_deleted_task', :locals => {:task => task} %>
+  <% else %>
+    <%= render task %>
+  <% end %>
 <% end %>

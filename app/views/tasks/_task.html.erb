@@ -2,4 +2,5 @@
   <%= link_to 'View Task', task_path(task.id) %> 
   <%= link_to 'Delete Task', task_path(task.id), data: {:confirm => 'Are you sure?'}, method: 'delete' %>
   <%= link_to 'Edit Task',  edit_task_path(task.id) %>
+  <%= link_to 'Cross off Task', task_path(task.id), method: 'post' %>
 </p>
