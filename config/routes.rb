@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :tasks
   post "/tasks/:id" => "tasks#soft_delete"
+  post "/texts/:id" => "texts#send_text"
   root to: "tasks#index"
+
 
 =begin
   get "/tasks" => "tasks#index"
