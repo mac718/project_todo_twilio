@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks
-  post "/tasks/:id" => "tasks#soft_delete"
+  post "/tasks/:id" => "tasks#toggle_soft_delete"
   post "/texts/:id" => "texts#send_text"
   root to: "tasks#index"
 

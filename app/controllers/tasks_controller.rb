@@ -48,7 +48,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def soft_delete
+  def toggle_soft_delete
     @task = Task.find(params[:id])
     @task.soft_deleted = !@task.soft_deleted
     @task.save
